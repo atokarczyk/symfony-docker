@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  apache:
+    build: apache
+    ports:
+      - "8000:80"
+    volumes:
+      - ./src:/var/www
+      - ./apache/vhost.conf:/etc/apache2/sites-available/000-default.conf
+    working_dir: "/var/www"
+
